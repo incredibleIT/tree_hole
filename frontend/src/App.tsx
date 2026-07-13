@@ -317,8 +317,8 @@ function App() {
           position={[0, 0, 31]}
           gravity={[0, -40, 0]}
           fov={20}
-          frontImage="/card-front.png"
-          backImage="/card-front.png"
+          frontImage={`${import.meta.env.BASE_URL}card-front.png`}
+          backImage={`${import.meta.env.BASE_URL}card-front.png`}
           imageFit="cover"
         />
       </section>
