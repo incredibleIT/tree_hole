@@ -1,0 +1,35 @@
+/* 下落文字物理动画组件样式 */
+.falling-text-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 300px;
+  cursor: pointer;
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.falling-text-target {
+  display: inline-block;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+
+.word {
+  display: inline-block;
+  margin: 0 0.3em;
+  user-select: none;
+}
+
+.highlighted {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.falling-text-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

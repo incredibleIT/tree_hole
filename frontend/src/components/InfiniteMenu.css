@@ -1,0 +1,115 @@
+.infinite-menu-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#infinite-grid-menu-canvas {
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  filter: grayscale(100%);
+}
+
+#infinite-grid-menu-canvas:active {
+  cursor: grabbing;
+}
+
+.action-button {
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #D97706;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #0C0A09;
+}
+
+.action-button-icon {
+  user-select: none;
+  position: relative;
+  color: #0C0A09;
+  top: 2px;
+  font-size: 26px;
+}
+
+.face-title {
+  user-select: none;
+  position: absolute;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: #e7e5e4;
+  top: 50%;
+  transform: translate(20%, -50%);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+
+.face-title.active {
+  opacity: 1;
+  transform: translate(20%, -50%);
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.face-title.inactive {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.1s ease;
+}
+
+.face-description {
+  user-select: none;
+  position: absolute;
+  max-width: 14ch;
+  top: 50%;
+  font-size: 1.1rem;
+  color: #a8a29e;
+  right: 1%;
+  transform: translate(0, -50%);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.face-description.active {
+  opacity: 1;
+  transform: translate(-90%, -50%);
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.face-description.inactive {
+  pointer-events: none;
+  transform: translate(-60%, -50%);
+  opacity: 0;
+  transition: 0.1s ease;
+}
+
+.action-button.active {
+  bottom: 3.8em;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.action-button.inactive {
+  bottom: -80px;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease;
+}
+
+@media (max-width: 1200px) {
+  .face-title,
+  .face-description {
+    display: none;
+  }
+}

@@ -1,0 +1,100 @@
+/* ═══════════════════════════════════════════
+   以外 — 全局设计令牌
+   深色模式优先（深夜落笔）
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* 色彩体系 — 深色模式（默认） */
+  --bg-deep: #0C0A09;        /* 深墨 Stone-950 */
+  --bg-card: #1C1917;        /* 夜纸 Stone-900 */
+  --text-primary: #E7E5E4;   /* 月光字 Stone-200 */
+  --text-secondary: #A8A29E; /* 旧信纸 Stone-400 */
+  --text-muted: #78716C;     /* 远处灯 Stone-500 */
+  --border-subtle: rgba(120, 113, 108, 0.12); /* 暗影线 */
+  --accent: #D97706;         /* 暖灯芯 Amber-600 */
+  --accent-hover: #B45309;   /* 琥珀灯 Amber-700 */
+  --accent-glow: rgba(217, 119, 6, 0.15);
+
+  /* 字体栈 */
+  --font-ui: 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Noto Serif SC', 'Georgia', serif;
+  --font-mono: 'Outfit', ui-monospace, monospace;
+
+  /* 间距 */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 10rem;
+
+  /* 全局设置 */
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-deep);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 选中文字颜色 */
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* 滚动条（极细，融入背景） */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 2px;
+}
