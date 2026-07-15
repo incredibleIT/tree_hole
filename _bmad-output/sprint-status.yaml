@@ -1,0 +1,96 @@
+# generated: 2025-07-15
+# last_updated: 2025-07-15
+# project: RKOS
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2025-07-15
+last_updated: 2025-07-15
+project: RKOS
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output
+
+development_status:
+  # ═══════════════════════════════════════════════════════════
+  # Epic 1：基础设施与故事提交
+  # 覆盖需求：FR1,2,3,5,14,15,18 + AR1-5,8,9 + NFR1,5,6,14
+  # ═══════════════════════════════════════════════════════════
+  epic-1: backlog
+  1-1-project-skeleton-init: backlog
+  1-2-dual-database-config-migration: backlog
+  1-3-unified-response-exception-handler: backlog
+  1-4-story-domain-model-mongodb: backlog
+  1-5-story-submit-api: backlog
+  1-6-story-query-api: backlog
+  1-7-api-key-authentication: backlog
+  1-8-api-versioning-swagger-docs: backlog
+  1-9-docker-compose-dev-env: backlog
+  epic-1-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════
+  # Epic 2：故事理解 Agent 与基因组生成（核心 Epic）
+  # 覆盖需求：FR4,6,7,8,9,10,11,28 + AR6,7 + NFR2,4,12,15,16,17
+  # ═══════════════════════════════════════════════════════════
+  epic-2: backlog
+  2-1-llm-call-service: backlog
+  2-2-prompt-template-service: backlog
+  2-3-genome-model-postgres-storage: backlog
+  2-4-story-understanding-agent: backlog
+  2-5-genome-persistence-status-mgmt: backlog
+  2-6-async-trigger-on-submit: backlog
+  2-7-story-reprocess: backlog
+  2-8-test-seed-data: backlog
+  epic-2-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════
+  # Epic 3：基因组查询
+  # 覆盖需求：FR12,13 + NFR3
+  # ═══════════════════════════════════════════════════════════
+  epic-3: backlog
+  3-1-genome-list-query-api: backlog
+  3-2-genome-by-story-id: backlog
+  epic-3-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════
+  # Epic 4：运维可观测性与部署
+  # 覆盖需求：FR25,26,27,29,30,31 + AR4 + NFR18,20,21
+  # ═══════════════════════════════════════════════════════════
+  epic-4: backlog
+  4-1-health-check-endpoint: backlog
+  4-2-structured-logging: backlog
+  4-3-config-server-prompt-hot-reload: backlog
+  4-4-production-docker-compose: backlog
+  4-5-api-docs-deployment-guide: backlog
+  4-6-e2e-integration-tests: backlog
+  epic-4-retrospective: optional
