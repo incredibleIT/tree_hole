@@ -24,6 +24,11 @@ build/
 npm-debug.log*
 pnpm-debug.log*
 
+# Agent 技能目录
+.agents/skills/
+.claude/skills/
+.lingma/skills/
+
 # 临时文件
 *.tmp
 .cache/
