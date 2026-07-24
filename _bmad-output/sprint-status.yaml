@@ -1,5 +1,5 @@
 # generated: 2025-07-15
-# last_updated: 2026-07-24
+# last_updated: 2025-07-15
 # project: RKOS
 # project_key: NOKEY
 # tracking_system: file-system
@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2025-07-15
-last_updated: 2026-07-24
+last_updated: 2025-07-15
 project: RKOS
 project_key: NOKEY
 tracking_system: file-system
@@ -46,33 +46,32 @@ development_status:
   # Epic 1：基础设施与故事提交
   # 覆盖需求：FR1,2,3,5,14,15,18 + AR1-5,8,9 + NFR1,5,6,14
   # ═══════════════════════════════════════════════════════════
-  epic-1: done
-  1-1-project-skeleton-init: done
-  1-2-dual-database-config-migration: done
-  1-3-unified-response-exception-handler: done
-  1-4-story-domain-model-mongodb: done
-  1-5-story-submit-api: done
-  1-6-story-query-api: done
-  1-7-api-key-authentication: done
-  1-8-api-versioning-swagger-docs: done
-  1-9-docker-compose-dev-env: done
-  epic-1-retrospective: done
+  epic-1: backlog
+  1-1-project-skeleton-init: backlog
+  1-2-dual-database-config-migration: backlog
+  1-3-unified-response-exception-handler: backlog
+  1-4-story-domain-model-mongodb: backlog
+  1-5-story-submit-api: backlog
+  1-6-story-query-api: backlog
+  1-7-api-key-authentication: backlog
+  1-8-api-versioning-swagger-docs: backlog
+  1-9-docker-compose-dev-env: backlog
+  epic-1-retrospective: optional
 
   # ═══════════════════════════════════════════════════════════
   # Epic 2：故事理解 Agent 与基因组生成（核心 Epic）
   # 覆盖需求：FR4,6,7,8,9,10,11,28 + AR6,7 + NFR2,4,12,15,16,17
-  # 开发分支：epic-2-story-agent-genome
   # ═══════════════════════════════════════════════════════════
-  epic-2: done
-  2-1-llm-call-service: done
-  2-2-prompt-template-service: done
-  2-3-genome-model-postgres-storage: done
-  2-4-story-understanding-agent: done
-  2-5-genome-persistence-status-mgmt: done
-  2-6-async-trigger-on-submit: done
-  2-7-story-reprocess: done
-  2-8-test-seed-data: done
-  epic-2-retrospective: done
+  epic-2: backlog
+  2-1-llm-call-service: backlog
+  2-2-prompt-template-service: backlog
+  2-3-genome-model-postgres-storage: backlog
+  2-4-story-understanding-agent: backlog
+  2-5-genome-persistence-status-mgmt: backlog
+  2-6-async-trigger-on-submit: backlog
+  2-7-story-reprocess: backlog
+  2-8-test-seed-data: backlog
+  epic-2-retrospective: optional
 
   # ═══════════════════════════════════════════════════════════
   # Epic 3：基因组查询

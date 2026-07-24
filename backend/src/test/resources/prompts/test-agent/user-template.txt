@@ -1,5 +1,0 @@
-请分析以下内容：
-
-{story_content}
-
-关系类型：{relationship_type}

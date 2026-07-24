@@ -50,8 +50,6 @@ _本文档通过逐步协作发现构建。章节随我们一起推进各个架�
 |------|------|
 | 后端框架 | Java（Spring Boot）— 已确定 |
 | 双存储 | MongoDB（非结构化）+ PostgreSQL（结构化）— 已确定 |
-| PostgreSQL 数据访问 | MyBatis-Plus 3.5.16（Spring Boot 4 Starter）— 已确定 |
-| MongoDB 数据访问 | Spring Data MongoDB（Spring Boot 原生）— 已确定 |
 | LLM 框架 | Spring AI（核心抽象层）+ Spring AI Alibaba（阿里云提供商，按需引入） |
 | Agent 模式 | 多轮对话，需 ChatMemory 持久化 |
 | Prompt 管理 | 文件外置，运行时可调 |
@@ -108,7 +106,7 @@ mkdir rkos-backend && cd rkos-backend
 spring init \
   --name=rkos-backend \
   --package-name=com.rkos \
-  --dependencies=web,validation,lombok,actuator,mongodb,jdbc,postgresql \
+  --dependencies=web,validation,lombok,actuator,mongodb,data-jpa,postgresql \
   --boot-version=4.1.0 \
   --java-version=21 \
   --build=maven
@@ -135,7 +133,6 @@ spring init \
 | 模型提供商接入 | 先 DashScope（通义千问），后 OpenAI | 阿里云生态优先，成本可控 |
 | Java 版本 | Java 21 LTS | 性能、虚拟线程、长期支持 |
 | 构建工具 | Maven | Spring 官方首选，依赖管理成熟 |
-| PostgreSQL ORM | MyBatis-Plus 3.5.16 | 灵活 SQL、代码生成、国内生态成熟、比 JPA 更可控 |
 
 ## 核心架构决策
 
@@ -756,10 +753,9 @@ rkos-backend/
 │   │   │   │   └── StoryPersistenceService.java
 │   │   │   ├── agent/
 │   │   │   │   └── StoryUnderstandingAgent.java
-│   │   │   ├── mapper/                   # MyBatis-Plus PostgreSQL Mapper
-│   │   │   │   └── GenomeMapper.java
-│   │   │   ├── repository/               # Spring Data MongoDB Repository
-│   │   │   │   └── StoryMongoRepository.java
+│   │   │   ├── repository/
+│   │   │   │   ├── MongoStoryRepository.java
+│   │   │   │   └── PostgresGenomeRepository.java
 │   │   │   ── dto/
 │   │   │       ├── StoryRequest.java
 │   │   │       └── StoryResponse.java
@@ -796,7 +792,7 @@ rkos-backend/
 ```
 
 **关键原则：**
-1. **按功能模块组织**：每个模块（story, knowledge, user）包含完整的 controller/service/agent/mapper/repository/dto
+1. **按功能模块组织**：每个模块（story, knowledge, user）包含完整的 controller/service/agent/repository/dto
 2. **Agent 独立目录**：AI Agent 逻辑放在 `agent/` 子目录，与普通 Service 区分
 3. **Prompt 外置管理**：所有 Prompt 模板放在 `src/main/resources/prompts/`，禁止硬编码
 4. **测试与源码同结构**：测试代码镜像主代码目录结构
@@ -1090,7 +1086,7 @@ public class LlmCallService {
 2. **响应格式一致性**：所有 API 必须返回 `ApiResponse<T>` 包装对象
 3. **Prompt 管理一致性**：禁止硬编码 Prompt，必须通过 `PromptTemplateService` 加载
 4. **异常处理一致性**：所有异常必须通过 `GlobalExceptionHandler` 转换为 `ApiResponse`
-5. **模块组织一致性**：新功能必须放在 `modules/{module-name}/` 下，遵循 controller/service/agent/mapper/repository/dto 结构
+5. **模块组织一致性**：新功能必须放在 `modules/{module-name}/` 下，遵循 controller/service/agent/repository/dto 结构
 6. **测试覆盖一致性**：每个 Service 必须有对应的 `*Test.java` 单元测试
 7. **配置隔离一致性**：环境特定配置必须放在 `application-{profile}.yml`，禁止硬编码在代码中
 
@@ -1276,10 +1272,9 @@ rkos-backend/
 │           │   └── StoryPersistenceService.java
 │           ├── agent/
 │           │   └── StoryUnderstandingAgent.java
-│           ├── mapper/
-│           │   └── GenomeMapper.java
 │           ├── repository/
-│           │   └── StoryMongoRepository.java
+│           │   ├── MongoStoryRepository.java
+│           │   └── PostgresGenomeRepository.java
 │           ├── model/
 │           │   ├── Story.java
 │           │   ├── RelationshipGenome.java
@@ -1354,7 +1349,7 @@ rkos-backend/
 | Service → Agent | Spring DI 直接调用 | 同进程内 |
 | Agent → LLM | Spring AI `ChatClient` | HTTP 调用外部 LLM API |
 | Service → MongoDB | Spring Data MongoDB | `MongoRepository` |
-| Service → PostgreSQL | MyBatis-Plus | `BaseMapper<T>` |
+| Service → PostgreSQL | Spring Data JPA | `JpaRepository` |
 | Config Client → Config Server | Spring Cloud Config | HTTP，Prompt 热更新 |
 
 ---
