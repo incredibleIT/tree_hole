@@ -32,3 +32,14 @@ pnpm-debug.log*
 # 临时文件
 *.tmp
 .cache/
+
+# Maven 构建产物
+backend/target/
+
+# Obsidian 配置
+_bmad-output/.obsidian/
+
+# 端到端测试临时文件
+gen-json.py
+story-text.txt
+test-story*.json

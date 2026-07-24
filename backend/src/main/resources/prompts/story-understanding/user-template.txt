@@ -1,0 +1,10 @@
+请分析以下故事，从中抽取关系基因组（Relationship Genome）信息。
+
+---
+
+{story_content}
+
+---
+
+请严格按照系统提示词中定义的 JSON Schema 格式输出完整的 Relationship Genome。
+如果某些信息在故事中未明确提及，请基于上下文进行合理推断，并在对应维度标注适当的置信度。

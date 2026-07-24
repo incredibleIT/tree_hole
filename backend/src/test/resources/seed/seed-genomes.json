@@ -1,0 +1,407 @@
+[
+  {
+    "storyId": "seed-story-001",
+    "agentVersion": "v1.0",
+    "genomeData": {
+      "genomeId": "seed-genome-001",
+      "storyId": "seed-story-001",
+      "version": "v1.0",
+      "relationship": {
+        "type": "情侣",
+        "duration": "3年",
+        "stage": "冷淡期",
+        "startContext": "大学校园"
+      },
+      "participants": {
+        "A": {
+          "role": "叙述者",
+          "attachment": "焦虑型",
+          "behaviors": ["索取确认", "频繁追问"],
+          "emotions": ["焦虑", "不安"],
+          "ageAtStory": 25,
+          "gender": "female"
+        },
+        "B": {
+          "role": "对方",
+          "attachment": "回避型",
+          "behaviors": ["沉默", "回避冲突"],
+          "emotions": ["疲惫", "无奈"],
+          "ageAtStory": 27,
+          "gender": "male"
+        }
+      },
+      "keyEvents": [
+        {
+          "event": "工作压力增加",
+          "position": "beginning",
+          "description": "叙述者开始频繁加班，两人见面时间减少"
+        },
+        {
+          "event": "争吵爆发",
+          "position": "climax",
+          "description": "一次激烈争吵后双方陷入冷战"
+        },
+        {
+          "event": "正式分手",
+          "position": "end",
+          "description": "对方提出分手，关系正式结束"
+        }
+      ],
+      "causalChain": ["工作压力增加", "沟通减少", "争吵升级", "冷战", "分手"],
+      "conflictPatterns": [
+        {
+          "type": "communication",
+          "frequency": "recurring",
+          "resolution": "escalation",
+          "description": "沟通不畅导致争吵升级"
+        }
+      ],
+      "outcome": {
+        "type": "分手",
+        "initiator": "B",
+        "manner": "direct"
+      },
+      "lessons": ["沟通是关系的基础", "需要关注对方的情感需求"],
+      "confidence": {
+        "overall": 0.85,
+        "relationship": 0.90,
+        "participants": 0.80,
+        "causalChain": 0.75,
+        "conflictPatterns": 0.88
+      },
+      "emotionalArc": {
+        "dominantEmotions": ["遗憾", "不舍"],
+        "trajectory": "decline"
+      }
+    },
+    "overallConfidence": 0.85,
+    "relationshipType": "情侣",
+    "outcomeType": "分手",
+    "createdAt": "2026-07-15T10:00:00",
+    "updatedAt": "2026-07-15T10:00:00"
+  },
+  {
+    "storyId": "seed-story-002",
+    "agentVersion": "v1.0",
+    "genomeData": {
+      "genomeId": "seed-genome-002",
+      "storyId": "seed-story-002",
+      "version": "v1.0",
+      "relationship": {
+        "type": "友谊",
+        "duration": "10年",
+        "stage": "修复期",
+        "startContext": "小学同桌"
+      },
+      "participants": {
+        "A": {
+          "role": "叙述者",
+          "attachment": "安全型",
+          "behaviors": ["主动沟通", "解释误会"],
+          "emotions": ["委屈", "珍惜"],
+          "ageAtStory": 28,
+          "gender": "male"
+        },
+        "B": {
+          "role": "对方",
+          "attachment": "焦虑型",
+          "behaviors": ["多疑", "冷战"],
+          "emotions": ["失望", "愤怒"],
+          "ageAtStory": 28,
+          "gender": "male"
+        }
+      },
+      "keyEvents": [
+        {
+          "event": "误会产生",
+          "position": "beginning",
+          "description": "叙述者无意中泄露了对方的秘密"
+        },
+        {
+          "event": "冷战",
+          "position": "climax",
+          "description": "对方拒绝沟通，友谊陷入僵局"
+        },
+        {
+          "event": "主动道歉",
+          "position": "end",
+          "description": "叙述者主动约对方深谈，误会解开"
+        }
+      ],
+      "causalChain": ["秘密泄露", "信任受损", "冷战", "主动沟通", "和好"],
+      "conflictPatterns": [
+        {
+          "type": "trust",
+          "frequency": "one-time",
+          "resolution": "compromise",
+          "description": "信任危机通过主动沟通化解"
+        }
+      ],
+      "outcome": {
+        "type": "和好",
+        "initiator": "A",
+        "manner": "direct"
+      },
+      "lessons": ["友谊需要信任维护", "主动沟通比冷战更有效"],
+      "confidence": {
+        "overall": 0.78,
+        "relationship": 0.82,
+        "participants": 0.75,
+        "causalChain": 0.70,
+        "conflictPatterns": 0.80
+      },
+      "emotionalArc": {
+        "dominantEmotions": ["珍惜", "释然"],
+        "trajectory": "fluctuate"
+      }
+    },
+    "overallConfidence": 0.78,
+    "relationshipType": "友谊",
+    "outcomeType": "和好",
+    "createdAt": "2026-07-15T11:00:00",
+    "updatedAt": "2026-07-15T11:00:00"
+  },
+  {
+    "storyId": "seed-story-003",
+    "agentVersion": "v1.0",
+    "genomeData": {
+      "genomeId": "seed-genome-003",
+      "storyId": "seed-story-003",
+      "version": "v1.0",
+      "relationship": {
+        "type": "家庭",
+        "duration": "25年",
+        "stage": "和解期",
+        "startContext": "原生家庭"
+      },
+      "participants": {
+        "A": {
+          "role": "叙述者",
+          "attachment": "回避型",
+          "behaviors": ["反抗", "疏离"],
+          "emotions": ["愤怒", "理解"],
+          "ageAtStory": 25,
+          "gender": "male"
+        },
+        "B": {
+          "role": "对方",
+          "attachment": "焦虑型",
+          "behaviors": ["控制", "唠叨"],
+          "emotions": ["担忧", "失落"],
+          "ageAtStory": 52,
+          "gender": "male"
+        }
+      },
+      "keyEvents": [
+        {
+          "event": "高考志愿分歧",
+          "position": "beginning",
+          "description": "父亲要求叙述者选父亲认可的专业"
+        },
+        {
+          "event": "离家独立",
+          "position": "climax",
+          "description": "叙述者大学后远离家乡，减少联系"
+        },
+        {
+          "event": "父亲生病",
+          "position": "end",
+          "description": "叙述者回家照顾父亲，双方开始理解彼此"
+        }
+      ],
+      "causalChain": ["控制欲过强", "反抗逃离", "距离产生理解", "生病契机", "和解"],
+      "conflictPatterns": [
+        {
+          "type": "values",
+          "frequency": "recurring",
+          "resolution": "compromise",
+          "description": "代际价值观冲突通过时间和距离逐渐化解"
+        }
+      ],
+      "outcome": {
+        "type": "持续",
+        "initiator": "mutual",
+        "manner": "gradual"
+      },
+      "lessons": ["理解需要时间和距离", "父母的控制欲源于爱", "主动表达感受很重要"],
+      "confidence": {
+        "overall": 0.92,
+        "relationship": 0.95,
+        "participants": 0.90,
+        "causalChain": 0.88,
+        "conflictPatterns": 0.93
+      },
+      "emotionalArc": {
+        "dominantEmotions": ["理解", "释然"],
+        "trajectory": "rise"
+      }
+    },
+    "overallConfidence": 0.92,
+    "relationshipType": "家庭",
+    "outcomeType": "持续",
+    "createdAt": "2026-07-15T12:00:00",
+    "updatedAt": "2026-07-15T12:00:00"
+  },
+  {
+    "storyId": "seed-story-004",
+    "agentVersion": "v1.0",
+    "genomeData": {
+      "genomeId": "seed-genome-004",
+      "storyId": "seed-story-004",
+      "version": "v1.0",
+      "relationship": {
+        "type": "同事",
+        "duration": "2年",
+        "stage": "疏远期",
+        "startContext": "同一项目组"
+      },
+      "participants": {
+        "A": {
+          "role": "叙述者",
+          "attachment": "安全型",
+          "behaviors": ["合作", "妥协"],
+          "emotions": ["失望", "无奈"],
+          "ageAtStory": 32,
+          "gender": "female"
+        },
+        "B": {
+          "role": "对方",
+          "attachment": "回避型",
+          "behaviors": ["争功", "拉帮结派"],
+          "emotions": ["野心", "防备"],
+          "ageAtStory": 30,
+          "gender": "male"
+        }
+      },
+      "keyEvents": [
+        {
+          "event": "项目合作",
+          "position": "beginning",
+          "description": "两人被分配到同一项目组，初期合作愉快"
+        },
+        {
+          "event": "晋升竞争",
+          "position": "climax",
+          "description": "同一个晋升名额导致关系紧张"
+        },
+        {
+          "event": "关系破裂",
+          "position": "end",
+          "description": "对方在会议上抢功，合作关系彻底破裂"
+        }
+      ],
+      "causalChain": ["合作愉快", "晋升机会出现", "利益冲突", "抢功", "疏远"],
+      "conflictPatterns": [
+        {
+          "type": "interest",
+          "frequency": "recurring",
+          "resolution": "escalation",
+          "description": "利益冲突从隐性竞争升级为公开对立"
+        }
+      ],
+      "outcome": {
+        "type": "疏远",
+        "initiator": "B",
+        "manner": "gradual"
+      },
+      "lessons": ["职场友谊与利益需要划清边界", "保持职业距离很重要"],
+      "confidence": {
+        "overall": 0.70,
+        "relationship": 0.75,
+        "participants": 0.68,
+        "causalChain": 0.65,
+        "conflictPatterns": 0.72
+      },
+      "emotionalArc": {
+        "dominantEmotions": ["失望", "警惕"],
+        "trajectory": "decline"
+      }
+    },
+    "overallConfidence": 0.70,
+    "relationshipType": "同事",
+    "outcomeType": "疏远",
+    "createdAt": "2026-07-15T13:00:00",
+    "updatedAt": "2026-07-15T13:00:00"
+  },
+  {
+    "storyId": "seed-story-005",
+    "agentVersion": "v1.0",
+    "genomeData": {
+      "genomeId": "seed-genome-005",
+      "storyId": "seed-story-005",
+      "version": "v1.0",
+      "relationship": {
+        "type": "师生",
+        "duration": "4年",
+        "stage": "深化期",
+        "startContext": "研究生导师"
+      },
+      "participants": {
+        "A": {
+          "role": "叙述者",
+          "attachment": "安全型",
+          "behaviors": ["虚心求教", "独立思考"],
+          "emotions": ["感激", "敬佩"],
+          "ageAtStory": 26,
+          "gender": "female"
+        },
+        "B": {
+          "role": "对方",
+          "attachment": "安全型",
+          "behaviors": ["耐心指导", "严格要求"],
+          "emotions": ["欣慰", "期望"],
+          "ageAtStory": 48,
+          "gender": "male"
+        }
+      },
+      "keyEvents": [
+        {
+          "event": "论文指导",
+          "position": "beginning",
+          "description": "导师耐心指导叙述者修改论文，建立信任"
+        },
+        {
+          "event": "低谷支持",
+          "position": "climax",
+          "description": "叙述者遭遇挫折，导师给予精神和学术支持"
+        },
+        {
+          "event": "毕业致谢",
+          "position": "end",
+          "description": "毕业典礼上叙述者向导师表达感恩"
+        }
+      ],
+      "causalChain": ["严格指导", "建立信任", "低谷支持", "成长突破", "感恩"],
+      "conflictPatterns": [
+        {
+          "type": "expectations",
+          "frequency": "occasional",
+          "resolution": "compromise",
+          "description": "导师高要求与学生能力之间的张力通过沟通平衡"
+        }
+      ],
+      "outcome": {
+        "type": "感恩",
+        "initiator": "A",
+        "manner": "direct"
+      },
+      "lessons": ["好的导师不仅传授知识，更传递人生智慧", "严格要求是另一种形式的关爱"],
+      "confidence": {
+        "overall": 0.88,
+        "relationship": 0.92,
+        "participants": 0.85,
+        "causalChain": 0.83,
+        "conflictPatterns": 0.90
+      },
+      "emotionalArc": {
+        "dominantEmotions": ["感恩", "敬佩"],
+        "trajectory": "rise"
+      }
+    },
+    "overallConfidence": 0.88,
+    "relationshipType": "师生",
+    "outcomeType": "感恩",
+    "createdAt": "2026-07-15T14:00:00",
+    "updatedAt": "2026-07-15T14:00:00"
+  }
+]
